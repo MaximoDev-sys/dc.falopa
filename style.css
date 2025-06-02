@@ -1,0 +1,230 @@
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        /* Colores */
+        :root {
+            --falopa-white: #F4F6F7;
+            --falopa-white1: #F0F3F4;
+            --falopa-white2: #ECF0F1;
+            --falopa-yellow: #FFEE58;
+            --falopa-yellow1: #FFEB3B;
+            --falopa-yellow2: #FDD835;
+            --falopa-skyblue: #29B6F6;
+            --falopa-skyblue1: #03A9F4;
+            --falopa-skyblue3: #039BE5;
+            --falopa-gray: #909090;
+            --falopa-gray1: #808080;
+            --falopa-gray2: #707070;
+            --falopa-gray3: #606060;
+            --falopa-gray4: #505050;
+            --falopa-gray5: #404040;
+            --falopa-gray6: #303030;
+            --falopa-gray7: #202020;
+            --falopa-gray8: #101010;
+            --falopa-gray9: #050505;
+        }
+        /* Estilos generales */
+        body {
+            overflow-x: hidden;
+            background-color: #202020;
+            color: #F0F3F4;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Scrollbar personalizada */
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #101010;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #303030;
+            border-radius: 10px;
+            border: 2px solid rgba(30, 41, 59, 0.5);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #505050;
+        }
+        
+        /* Efecto vidrio */
+        .glass-effect {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        /* Efecto reflejo dinámico */
+        .glass-reflective {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glass-reflective::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0) 40%,
+                rgba(255, 255, 255, 0.1) 45%,
+                rgba(255, 255, 255, 0) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        
+        .glass-reflective:hover::after {
+            opacity: 0.8;
+            top: -30%;
+            left: -30%;
+        }
+        
+        /* Efecto 3D para tarjetas */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        /* Efecto de distorsión */
+        .distortion-effect {
+            animation: distort 6s infinite alternate;
+        }
+        
+        @keyframes distort {
+            0% { 
+                filter: drop-shadow(0 0 5px #00ff00) hue-rotate(0deg);
+                transform: scale(1);
+            }
+            25% { 
+                filter: drop-shadow(0 0 10px #00ff00) hue-rotate(90deg);
+                transform: scale(1.02);
+            }
+            50% { 
+                filter: drop-shadow(0 0 5px #00ff00) hue-rotate(180deg);
+                transform: scale(1);
+            }
+            75% { 
+                filter: drop-shadow(0 0 15px #00ff00) hue-rotate(270deg);
+                transform: scale(1.02);
+            }
+            100% { 
+                filter: drop-shadow(0 0 5px #00ff00) hue-rotate(360deg);
+                transform: scale(1);
+            }
+        }
+        
+        /* Efecto de máquina de escribir */
+        .typing-effect::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        /* Animación flotante */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Fuente hacker */
+        .hacker-font {
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+        }
+        
+        /* Transición para modales */
+        .modal-transition {
+            transition: all 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        .elhueso {
+            transform: translateY(-268px); /* también sube 20 píxeles */
+        }
+
+        .hcorreccion {
+            height: 15.6rem;
+        }
+
+        .casillas {
+            transform: scale(0.75) translateZ(0);
+            transform-origin: top center; /* mantiene el sitio centrado arriba */
+            will-change: transform;
+            backface-visibility: hidden;
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+        } 
+        .electric-effect {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background: url('https://cdnb.artstation.com/p/assets/images/images/038/406/655/original/thiago-buzzi-gif-vfx-ss-raio-01.gif') no-repeat center;
+            background-size: contain;
+            pointer-events: none;
+            z-index: 9999;
+            animation: fadeout 0.4s ease-out forwards;
+        }
+
+        @keyframes fadeout {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1.5); }
+        }
+
+        .video-background::before {
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 2px);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .avatar-frame {
+            position: absolute; /* Overlay on top of the profile picture */
+            top: 15%; /* Adjust to move it higher (e.g., reduce from 50% to 40%) */
+            left: 50%; /* Center horizontally within #blurred-box */
+            transform: translate(-50%, -50%); /* Adjust for proper centering */
+            width: 15% ; /* Slightly larger than the profile picture */
+            height: 20%; /* Slightly larger than the profile picture */
+            z-index: 1000; /* Ensure it is above the profile picture */
+            pointer-events: none; /* Prevent interaction with the frame */
+            display: none; /* Initially hidden */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 120vh;
+        }
